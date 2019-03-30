@@ -16,7 +16,7 @@ class App extends Component {
             <TextArea value={inputText} onChange={this._onHandleInputText} />
             <InputStatus>{inputText.length}/500</InputStatus>
           </InputContainer>
-          <ChangeButton onClick={this._checkGrammar}>맞춤법 검사</ChangeButton>
+          <ChangeButton onClick={this._checkGrammar}>검사</ChangeButton>
           <TextArea
             value={inputText}
             onChange={this._onHandleInputText}
@@ -66,20 +66,18 @@ const TextArea = styled.textarea`
   width: 250px;
   height: 140px;
   resize: none;
-  ${inputAndResult}
-  background-color:rgb(38, 41, 43);
+  background-color: rgb(38, 41, 43);
   color: rgb(232, 235, 236);
   font-size: 20px;
 `;
 
 const ChangeButton = styled.button`
-  display: flex;
-  width: 68px;
+  width: 50px;
   height: 30px;
   margin-top: 50px;
-`;
-
-const inputAndResult = css`
-  width: 200px;
-  height: 100px;
+  background-color: rgb(38, 41, 43);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
 `;
