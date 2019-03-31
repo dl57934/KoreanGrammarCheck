@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from "react";
 import styled, { css } from "styled-components";
-import cheerio from "cheerio";
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const webdriver = require("selenium-webdriver");
 
 class App extends Component {
   statusTextColor = [];
@@ -58,36 +56,7 @@ class App extends Component {
     else alert("글자 수는 500글자가 최대입니다.");
   };
 
-  _checkGrammar = () => {
-    const window = new JSDOM("", {
-      url:
-        "https://search.naver.com/search.naver?sm=top_sug.pre&fbm=1&acr=1&acq=%EB%A7%9E%EC%B6%A4%EB%B2%95&qdt=0&ie=utf8&query=%EB%A7%9E%EC%B6%A4%EB%B2%95%EA%B2%80%EC%82%AC%EA%B8%B0"
-    }).window;
-    console.log(window.document.body.innerHTML);
-
-    // fetch(
-    //   "https://cors-anywhere.herokuapp.com/https://search.naver.com/search.naver?sm=top_sug.pre&fbm=1&acr=1&acq=%EB%A7%9E%EC%B6%A4%EB%B2%95&qdt=0&ie=utf8&query=%EB%A7%9E%EC%B6%A4%EB%B2%95%EA%B2%80%EC%82%AC%EA%B8%B0"
-    // )
-    //   .then(res => res.text())
-    //   .then(html => {
-    //     const window = new JSDOM(`${html}`, { runScripts: "outside-only" })
-    //       .window;
-    //     console.log(window.document.getElementsByTagName("textarea")[0].value);
-    //     console.log(
-    //       window.document.getElementsByTagName("textarea")[0].className
-    //     );
-    //     window.document.getElementsByTagName(
-    //       "textarea"
-    //     )[0].value = this.state.inputText;
-    //     console.log(window.document.getElementsByTagName("textarea")[0].value);
-    //     console.log(
-    //       window.document.getElementsByTagName("textarea")[0].className
-    //     );
-    //     // console.log(
-    //     //   window.document.getElementsByClassName("_result_text")[0].innerHTML
-    //     // );
-    //   });
-  };
+  _checkGrammar = () => {};
 }
 
 export default App;
